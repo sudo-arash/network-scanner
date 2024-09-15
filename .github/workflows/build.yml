@@ -35,3 +35,6 @@ jobs:
       with:
         name: built-app
         path: dist/
+    - name: GitHub Releases
+      uses: fnkr/github-action-ghr@v1.3
+          
