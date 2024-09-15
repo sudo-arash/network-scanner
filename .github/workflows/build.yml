@@ -28,7 +28,7 @@ jobs:
 
     - name: Build with PyInstaller
       run: |
-        pyinstaller --onefile your_python_file.py
+        pyinstaller --onefile network_scanner.py
 
     - name: Upload the built file
       uses: actions/upload-artifact@v3
