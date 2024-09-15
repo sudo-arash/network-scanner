@@ -24,7 +24,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install scapy colorama pyinstaller
+        pip install -r requirements.txt || pip install scapy colorama pyinstaller
 
     - name: Build with PyInstaller
       run: |
@@ -35,6 +35,8 @@ jobs:
       with:
         name: built-app
         path: dist/
-    - name: GitHub Releases
-      uses: fnkr/github-action-ghr@v1.3
-          
+
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: dist/network_scanner
